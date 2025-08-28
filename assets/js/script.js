@@ -328,14 +328,14 @@ async function generatePdfFromImage(dataUrls) {
     const pdfBlob = new Blob([pdfBytes], { type: CONTENT_TYPE });
 
     const blobUrl = URL.createObjectURL(pdfBlob);
-    window.open(blobUrl, "_blank");
+    // window.open(blobUrl, "_blank");
     console.log({
       blobUrl,
       pdfBase64
     });
 
     // สร้าง Base64 ของ PDF
-    // const pdfBase64 = await convertBlobToBase64(pdfBlob);
+    const pdfBase64 = await convertBlobToBase64(pdfBlob);
 
     // ส่ง PDF ไปยังเซิร์ฟเวอร์
     await sendPdfEmail(pdfBase64);
@@ -419,7 +419,7 @@ async function genetatePDFV2() {
     const pdfImage = canvas.toDataURL("image/jpeg");
     return pdfImage;
   } catch (error) {
-    console.error("Error generating PDF:", error);
+    console.error("Error generating PDF Docs 2:", error);
     return null;
   }
 }
