@@ -332,13 +332,14 @@ async function generatePdfFromImage(dataUrls) {
 
     const blobUrl = URL.createObjectURL(pdfBlob);
     // window.open(blobUrl, "_blank");
+
+    // สร้าง Base64 ของ PDF
+    const pdfBase64 = await convertBlobToBase64(pdfBlob);
+
     console.log({
       blobUrl,
       pdfBase64
     });
-
-    // สร้าง Base64 ของ PDF
-    const pdfBase64 = await convertBlobToBase64(pdfBlob);
 
     // ส่ง PDF ไปยังเซิร์ฟเวอร์
     await sendPdfEmail(pdfBase64);
