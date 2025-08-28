@@ -269,8 +269,13 @@ document.getElementById("generate").addEventListener("click", async () => {
     });
 
     // Convert canvas to an image
+    console.log("end procress next generate v2");
     const pdfImage = canvas.toDataURL("image/jpeg");
     const pdfImage2 = await genetatePDFV2();
+    console.log({
+      pdfImage,
+      pdfImage2
+    });
     if (!pdfImage2) {
       throw new Error("Failed to generate PDF");
     }
