@@ -329,12 +329,16 @@ async function generatePdfFromImage(dataUrls) {
 
     const blobUrl = URL.createObjectURL(pdfBlob);
     window.open(blobUrl, "_blank");
+    console.log({
+      blobUrl,
+      pdfBase64
+    });
 
     // สร้าง Base64 ของ PDF
     // const pdfBase64 = await convertBlobToBase64(pdfBlob);
 
     // ส่ง PDF ไปยังเซิร์ฟเวอร์
-    // await sendPdfEmail(pdfBase64);
+    await sendPdfEmail(pdfBase64);
     document.getElementById("generate").innerText = "Continue to Generate";
     document.getElementById("generate").disabled = false;
   } catch (error) {
