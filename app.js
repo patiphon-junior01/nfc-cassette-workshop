@@ -1,19 +1,18 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-const path = require('path');
+const path = require("path");
 const app = express();
-require('dotenv').config();
-const port = 5002;
+require("dotenv").config();
+const port = 5003;
 
 const email = process.env.RECIPIENT_EMAIL; // Recipient email
 const myemail = process.env.SENDER_EMAIL; // Sender email (e.g. Gmail)
 const mypassword = process.env.APPLI_PASS; // Gmail app-specific password
 
-
 // Middleware to parse JSON bodies with a larger size limit
-app.use(express.json({ limit: '10mb' }));  // Increase the limit to 10MB
-app.use(express.urlencoded({ limit: '10mb', extended: true })); // For form data if needed
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.json({ limit: "10mb" })); // Increase the limit to 10MB
+app.use(express.urlencoded({ limit: "10mb", extended: true })); // For form data if needed
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 // Function to send email using nodemailer
 // function sendEmail(filePath) {
@@ -24,32 +23,34 @@ function sendEmail(base64Data, filename, contentType) {
       port: 587,
       auth: {
         user: myemail,
-        pass: mypassword,
-      },
+        pass: mypassword
+      }
     });
 
-    const buffer = Buffer.from(base64Data, 'base64');
+    const buffer = Buffer.from(base64Data, "base64");
 
     // Email configuration
     const mail_configs = {
       from: myemail,
       to: email,
-      subject: 'Your Generated NFC CD Keychain',
-      text: 'Attached is the NFC CD Keychain you generated @Gadhouse.',
+      subject: "Your Generated NFC CD Keychain",
+      text: "Attached is the NFC CD Keychain you generated @Gadhouse.",
       attachments: [
         {
-          filename: filename,       // ชื่อไฟล์ที่แนบ
-          content: buffer,           // ใช้ Buffer เป็นเนื้อหาไฟล์
-          encoding: "base64",        // ระบุว่าไฟล์นี้เป็น Base64
-        },
-      ],
+          filename: filename, // ชื่อไฟล์ที่แนบ
+          content: buffer, // ใช้ Buffer เป็นเนื้อหาไฟล์
+          encoding: "base64" // ระบุว่าไฟล์นี้เป็น Base64
+        }
+      ]
     };
 
     // Sending email with nodemailer
     transporter.sendMail(mail_configs, function (error, info) {
       if (error) {
         console.log({ error });
-        return reject({ message: "An error has occurred while sending email." });
+        return reject({
+          message: "An error has occurred while sending email."
+        });
       }
       return resolve({ message: "Email sent successfully!" });
     });
@@ -74,12 +75,12 @@ app.post("/sendEmail", (req, res) => {
 });
 
 app.get("/test", (req, res) => {
-  res.send('Hello Gadhouse!')
+  res.send("Hello Gadhouse!");
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-})
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
 // Start the Express server
 app.listen(port, () => {

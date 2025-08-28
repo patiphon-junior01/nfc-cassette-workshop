@@ -9,7 +9,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customize Your NFC CD Keychain</title>
+  <title>Customize Your NFC CD Cassette</title>
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/style-new.css">
   <link rel="stylesheet" href="/assets/css/input-new.css">
@@ -22,67 +22,99 @@
 
 
 <body data-new-gr-c-s-check-loaded="14.1216.0" data-gr-ext-installed="" class="v1.1.2">
-  <h1 class="is-h1">Customize Your NFC CD Keychain 💿</h1>
+  <h1 class="is-h1">Customize Your NFC Cassette 📀</h1>
+
   <div class="container" id="template">
     <!-- Image Template -->
-    <img src="/assets/images/template.png" alt="Template" style="width: 100%; height: auto;">
+    <img src="/assets/images/template-1.png" alt="Template" style="width: 100%; height: auto;">
 
     <!-- Interactive Upload Areas -->
-    <div class="upload-box" id="frontImage" style="top: 13.5%; left: 21.9%; width: 20%; height: 14.8%;"></div>
-    <div class="upload-box" id="backImage" style="top: 13.5%; left: 42.3%; width: 20%; height: 14.8%;"></div>
-    <div class="upload-box" id="outerImage" style="top: 32.3%; left: 21.5%; width: 27.9%; height: 13.8%;"></div>
-    <div class="upload-box" id="innerImage" style="top: 32.3%;left: 49.5%; width: 27.9%; height: 13.8%;"></div>
-    <div class="upload-box image-bottom" id="packagingImage"></div>
+    <div class="upload-box" id="select-file-1" style="    
+    top: 6.5%;
+    left: 11.4%;
+    width: 16.7%;
+    height: 24.8%;"></div>
+    <div class="upload-box" id="select-file-2" style="    
+    top: 6.5%;
+    left: 34.2%;
+    width: 16.7%;
+    height: 24.8%;"></div>
+    <div class="upload-box" id="select-file-3" style="    
+    top: 6.5%;
+    left: 57.1%;
+    width: 16.7%;
+    height: 24.8%;"></div>
 
-    <!-- Interactive Text Areas -->
-    <!-- contenteditable="true" -->
-    <div class="text-box left-text text-with-stroke text-1" id="frontText">
+    <div class="upload-box" id="select-file-4" style="    
+    top: 41.5%;
+    left: 24.1%;
+    width: 21.5%;
+    height: 49.8%;"></div>
+
+
+    <div class="upload-box" id="select-file-5" style="    
+    top: 41.5%;
+    left: 24%;
+    width: 21.6%;
+    height: 49.8%;"></div>
+
+    <div class="text-box text-with-stroke right-text text-2" id="backText">
       TEXT
     </div>
-    <div class="text-box right-text text-with-stroke text-2" id="backText">
-      TEXT
-    </div>
-    <div class="text-box text-with-stroke" id="packagingText" style="    top: 62%;
-    left: 26.5%;
-    width: 22%;
-    height: 5%;
-    font-size: 16px;">
-      TEXT
-    </div>
+  </div>
+
+  <div class="container" id="template-2">
+    <!-- Image Template -->
+    <img src="/assets/images/template-2.png" alt="Template" style="width: 100%; height: auto;">
+
+    <div class="upload-box" id="select-file-6" style="    
+    top: 41.5%;
+    left: 10.1%;
+    width: 21.5%;
+    height: 49.8%;"></div>
+
+    <div class="upload-box" id="select-file-7" style="    
+    top: 41.5%;
+    left: 31.6%;
+    width: 21.5%;
+    height: 49.8%;"></div>
   </div>
 
   <!-- Popup for Text Controls -->
   <div id="textControlsPopup" class="popup">
-    <label for="popupText">Text Message:</label>
-    <div class="modern-input">
-      <input type="text" id="popupText" class="popupText" placeholder="Enter Text">
+    <div class="content">
+
+      <label for="popupText">Text Message:</label>
+      <div class="modern-input">
+        <input type="text" id="popupText" class="popupText" placeholder="Enter Text">
+      </div>
+
+      <label for="popupFontStyle">Font Style:</label>
+      <div class="modern-select">
+        <select id="popupFontStyle">
+          <option value="Alfa Slab One">Alfa Slab One</option>
+          <option value="Anton">Anton</option>
+          <option value="Pacifico">Pacifico</option>
+          <option value="PublicStunt Personal">PublicStunt Personal</option>
+          <option value="AdvercaseFont">AdvercaseFont</option>
+          <option value="Apple Peach">Apple Peach</option>
+        </select>
+      </div>
+
+      <label for="popupFontSize">Font Size <span id="valuePopupFontSize">0</span> (PX):</label>
+      <div>
+        <input type="range" min="3" max="16" class="slider" id="popupFontSize" min="0" max="20" value="7">
+      </div>
+
+
+      <label for="popupFontSize">Select Color:</label>
+      <input type="color" id="popupColor" class="popupColor" style="width: 100%;height: 35px;">
+
+      <button id="closePopup" class="btn-close" type="button">Close</button>
     </div>
-
-    <label for="popupFontStyle">Font Style:</label>
-    <div class="modern-select">
-      <select id="popupFontStyle">
-        <option value="Alfa Slab One">Alfa Slab One</option>
-        <option value="Anton">Anton</option>
-        <option value="Pacifico">Pacifico</option>
-        <option value="PublicStunt Personal">PublicStunt Personal</option>
-        <option value="AdvercaseFont">AdvercaseFont</option>
-        <option value="Apple Peach">Apple Peach</option>
-      </select>
-    </div>
-
-    <label for="popupFontSize">Font Size <span id="valuePopupFontSize">0</span> (PX):</label>
-    <div>
-      <input type="range" min="7" max="60" class="slider" id="popupFontSize" min="0" max="20" value="7">
-    </div>
-
-
-    <label for="popupFontSize">Select Color:</label>
-    <input type="color" id="popupColor" class="popupColor" style="width: 100%;height: 35px;">
-
-    <button id="closePopup" class="btn-close" type="button">Close</button>
   </div>
 
-  <button id="generate" class="generate" type="button">Generate Keychain</button>
+  <button id="generate" class="generate" type="button">Continue to Generate</button>
   <script src="/assets/js/script.js"></script>
 
 </body>

@@ -1,0 +1,41 @@
+.text-1 {
+  top: 36%;
+  left: 22.7%;
+  width: 1%;
+  height: 5%;
+  font-size: 7px;
+  text-wrap: nowrap;
+  margin: 0px;
+  letter-spacing: 1px;
+  stroke-width: 0px !important;
+}
+
+.text-2 {
+  top: 57%;
+  left: 20.7%;
+  /* width: 5%; */
+  height: 20%;
+  font-size: 10px;
+  text-wrap: nowrap;
+  line-height: 110%;
+  letter-spacing: 1px;
+  stroke-width: 0px !important;
+  overflow: visible;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .text-1 {
+    font-size: 3px;
+    padding: 2.5px;
+    /* left: 15.7%; */
+  }
+
+  .text-2 {
+    font-size: 6px;
+    padding: 2.5px;
+    /* left: 40.4%; */
+  }
+}
