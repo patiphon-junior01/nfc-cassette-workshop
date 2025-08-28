@@ -130,10 +130,10 @@ document.getElementById("popupFontStyle").addEventListener("change", (e) => {
 // Handle PDF Generation
 document.getElementById("generate").addEventListener("click", async () => {
   try {
-    // if (document.querySelectorAll(".upload-box img").length < 7) {
-    //   alert("Please Upload Image Is All!");
-    //   return;
-    // }
+    if (document.querySelectorAll(".upload-box img").length < 7) {
+      alert("Please Upload Image Is All!");
+      return;
+    }
 
     document.getElementById("generate").innerText = "Generating...";
     document.getElementById("generate").disabled = true;
