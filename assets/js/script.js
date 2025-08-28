@@ -297,6 +297,9 @@ async function generatePdfFromImage(dataUrls) {
     const pdfDoc = await PDFLib.PDFDocument.create();
 
     for (let i = 0; i < dataUrls.length; i++) {
+      console.log({
+        dataUrls: dataUrls[i]
+      });
       const dataUrl = dataUrls[i];
 
       // แปลง Data URL ของรูปภาพเป็น Buffer
