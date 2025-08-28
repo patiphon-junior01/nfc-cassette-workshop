@@ -52,8 +52,6 @@ document.querySelectorAll(".text-box").forEach((textBox) => {
     popup.style.zIndex = "1000";
     popup.style.opacity = "1";
     // Pre-fill controls with current values
-    console.log(window.getComputedStyle(textBox).fontSize.replace("px", ""));
-
     document.getElementById("popupFontSize").value = +window
       .getComputedStyle(textBox)
       .fontSize.replace("px", "");
@@ -84,8 +82,6 @@ document.querySelectorAll(".text-box").forEach((textBox) => {
     )
       .toString()
       .replace(/["']/g, "");
-
-    console.log((window.getComputedStyle(textBox).fontFamily ?? "").toString());
   });
 });
 
@@ -269,7 +265,7 @@ document.getElementById("generate").addEventListener("click", async () => {
     });
 
     // Convert canvas to an image
-    console.log("end procress next generate v2");
+    console.log("End procress next generate v2");
     const pdfImage = canvas.toDataURL("image/jpeg");
     const pdfImage2 = await genetatePDFV2();
     console.log({

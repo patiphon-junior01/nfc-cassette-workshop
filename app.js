@@ -47,7 +47,6 @@ function sendEmail(base64Data, filename, contentType) {
     // Sending email with nodemailer
     transporter.sendMail(mail_configs, function (error, info) {
       if (error) {
-        console.log({ error });
         return reject({
           message: "An error has occurred while sending email."
         });
