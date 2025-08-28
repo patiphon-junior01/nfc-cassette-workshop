@@ -265,13 +265,9 @@ document.getElementById("generate").addEventListener("click", async () => {
     });
 
     // Convert canvas to an image
-    console.log("End procress next generate v2");
     const pdfImage = canvas.toDataURL("image/jpeg");
     const pdfImage2 = await genetatePDFV2();
-    console.log({
-      pdfImage,
-      pdfImage2
-    });
+
     if (!pdfImage2) {
       throw new Error("Failed to generate PDF");
     }
@@ -293,9 +289,6 @@ async function generatePdfFromImage(dataUrls) {
     const pdfDoc = await PDFLib.PDFDocument.create();
 
     for (let i = 0; i < dataUrls.length; i++) {
-      console.log({
-        dataUrls: dataUrls[i]
-      });
       const dataUrl = dataUrls[i];
 
       // แปลง Data URL ของรูปภาพเป็น Buffer
@@ -331,11 +324,6 @@ async function generatePdfFromImage(dataUrls) {
 
     // สร้าง Base64 ของ PDF
     const pdfBase64 = await convertBlobToBase64(pdfBlob);
-
-    console.log({
-      blobUrl,
-      pdfBase64
-    });
 
     // ส่ง PDF ไปยังเซิร์ฟเวอร์
     await sendPdfEmail(pdfBase64);
