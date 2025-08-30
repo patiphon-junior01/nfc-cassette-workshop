@@ -249,17 +249,31 @@ button {
   height: 35.4%;
 }
 
+#select-file-4 {
+  top: 41.4%;
+  left: 23.8%;
+  width: 21.9%;
+  height: 50.2%;
+}
+
+#select-file-5 {
+  top: 41.4%;
+  left: 67%;
+  width: 21.9%;
+  height: 50.2%;
+}
+
 #select-file-6 {
   top: 41.6%;
   left: 10%;
-  width: 21.8%;
+  width: 22%;
   height: 50.1%;
 }
 
 #select-file-7 {
   top: 41.6%;
-  left: 31.7%;
-  width: 21.5%;
+  left: 32%;
+  width: 21.2%;
   height: 50.1%;
 }
 
@@ -289,17 +303,31 @@ button {
     /* left: 14.1%; */
   }
 
+  #select-file-4 {
+    top: 41.3%;
+    left: 23.8%;
+    width: 21.7%;
+    height: 49.8%;
+  }
+
+  #select-file-5 {
+    top: 41.4%;
+    left: 67%;
+    width: 21.6%;
+    height: 49.8%;
+  }
+
   #select-file-6 {
     top: 41.6%;
     left: 10%;
-    width: 21.7%;
-    height: 49.8%;
+    width: 22%;
+    height: 49.6%;
   }
 
   #select-file-7 {
     top: 41.6%;
     left: 31.9%;
     width: 21%;
-    height: 49.8%;
+    height: 49.6%;
   }
 }
