@@ -111,9 +111,10 @@ document.getElementById("popupColor").addEventListener("change", (e) => {
   }
 });
 
-document.getElementById("popupText").addEventListener("change", (e) => {
+document.getElementById("popupText").addEventListener("input", (e) => {
   if (activeTextBox) {
     activeTextBox.innerText = e.target.value;
+    console.log(document.getElementById(backText).style.right);
   }
 });
 
@@ -126,10 +127,10 @@ document.getElementById("popupFontStyle").addEventListener("change", (e) => {
 // Handle PDF Generation
 document.getElementById("generate").addEventListener("click", async () => {
   try {
-    if (document.querySelectorAll(".upload-box img").length < 7) {
-      alert("Please Upload Image Is All!");
-      return;
-    }
+    // if (document.querySelectorAll(".upload-box img").length < 7) {
+    //   alert("Please Upload Image Is All!");
+    //   return;
+    // }
 
     document.getElementById("generate").innerText = "Generating...";
     document.getElementById("generate").disabled = true;
@@ -320,13 +321,13 @@ async function generatePdfFromImage(dataUrls) {
     const pdfBlob = new Blob([pdfBytes], { type: CONTENT_TYPE });
 
     const blobUrl = URL.createObjectURL(pdfBlob);
-    // window.open(blobUrl, "_blank");
+    window.open(blobUrl, "_blank");
 
     // สร้าง Base64 ของ PDF
-    const pdfBase64 = await convertBlobToBase64(pdfBlob);
+    // const pdfBase64 = await convertBlobToBase64(pdfBlob);
 
     // ส่ง PDF ไปยังเซิร์ฟเวอร์
-    await sendPdfEmail(pdfBase64);
+    // await sendPdfEmail(pdfBase64);
     document.getElementById("generate").innerText = "Continue to Generate";
     document.getElementById("generate").disabled = false;
   } catch (error) {

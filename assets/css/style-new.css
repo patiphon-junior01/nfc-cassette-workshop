@@ -65,7 +65,7 @@ h1 {
 #template {
   position: relative;
   width: 80%;
-  max-width: 1123px;
+  /* max-width: 1123px; */
   /* max-width: 1240px; */
   /* aspect-ratio: 297 / 217; */
   aspect-ratio: 1123 / 794;
@@ -249,6 +249,20 @@ button {
   height: 35.4%;
 }
 
+#select-file-6 {
+  top: 41.6%;
+  left: 10%;
+  width: 21.8%;
+  height: 50.1%;
+}
+
+#select-file-7 {
+  top: 41.6%;
+  left: 31.7%;
+  width: 21.5%;
+  height: 50.1%;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   #template {
@@ -273,5 +287,19 @@ button {
 
   .image-bottom {
     /* left: 14.1%; */
+  }
+
+  #select-file-6 {
+    top: 41.6%;
+    left: 10%;
+    width: 21.7%;
+    height: 49.8%;
+  }
+
+  #select-file-7 {
+    top: 41.6%;
+    left: 31.9%;
+    width: 21%;
+    height: 49.8%;
   }
 }
